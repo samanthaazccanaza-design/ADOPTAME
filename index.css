@@ -588,4 +588,5 @@ body:has(.pet-modal[open]) { overflow: hidden; }
 }
 @media (max-width: 520px) {
   .donate-card { padding: 22px; }
-}
+}.whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 1000; background: var(--primary-color); color: #fff; border-radius: 50%; width: 56px; height: 56px; display: grid; place-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s ease; } .whatsapp-float:hover { transform: scale(1.1); }
+.whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 1000; background: #fff; color: #fff; border-radius: 50%; width: 56px; height: 56px; display: grid; place-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s ease; } .whatsapp-float:hover { transform: scale(1.1); } .whatsapp-float img { border-radius: 50%; width: 32px; height: 32px; object-fit: cover; }
