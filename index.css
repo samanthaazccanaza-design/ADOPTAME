@@ -1,8 +1,9 @@
 /* ========================================
    ADOPTAME - index.css
    Todos los estilos de la página, por secciones:
-   base, navbar, hero + carrusel, adopción, historia,
-   donar y footer. Las variables vienen de styles/globals.css
+   base, navbar, carrusel grande, hero + carrusel, adopción,
+   historia, donar, footer, modal, páginas internas y WhatsApp.
+   Las variables vienen de styles/globals.css
    ======================================== */
 
 html { scroll-behavior: smooth; }
@@ -85,8 +86,8 @@ section[id] { scroll-margin-top: 72px; }
   padding-bottom: 0;
   border-bottom: 0;
 }
-.section-title h2 { font-size: 2.2rem; margin-bottom: 10px;  text-align: left}
-.section-title p { margin-left:  0;margin-right: 0}
+.section-title h2 { font-size: 2.2rem; margin-bottom: 10px; text-align: left; }
+.section-title p { margin-left: 0; margin-right: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -172,6 +173,182 @@ section[id] { scroll-margin-top: 72px; }
   .nav-links { flex-direction: column; align-items: stretch; }
   .nav-links a { padding: 12px 16px; }
   .nav-menu .btn { width: 100%; }
+}
+
+/* Componente: carrusel grande (pantalla completa bajo el navbar) */
+
+.carrusel-grande {
+  width: 100%;
+  height: calc(100vh - 72px);
+  height: calc(100svh - 72px);
+  min-height: 420px;
+  padding: 0;
+  margin: 0;
+}
+
+.carrusel-grande-contenido {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carrusel-grande-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carrusel-grande-track::-webkit-scrollbar { display: none; }
+.carrusel-grande-track:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }
+
+.carrusel-grande-slide {
+  position: relative;
+  flex: 0 0 100%;
+  height: 100%;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+/* Anula el aspect-ratio 4/3 y las esquinas redondas del .skeleton */
+.carrusel-grande-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+.carrusel-grande-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Difuminado oscuro sobre la imagen */
+.carrusel-grande-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(15, 12, 40, 0.80) 0%, rgba(15, 12, 40, 0.45) 50%, rgba(15, 12, 40, 0.10) 100%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, transparent 40%);
+}
+
+/* Textos de cada imagen */
+.carrusel-grande-caption {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 88px;
+  padding-left: max(88px, calc((100% - 1200px) / 2 + 24px));
+  color: #fff;
+}
+
+.carrusel-grande-tag {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.carrusel-grande-caption h2 {
+  max-width: 14ch;
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+.carrusel-grande-caption p {
+  max-width: 46ch;
+  margin: 0 0 28px;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Flechas a los costados */
+.carrusel-grande-arrows {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  pointer-events: none;
+}
+
+.carrusel-grande-btn {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+}
+.carrusel-grande-btn:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.carrusel-grande-btn svg { width: 22px; height: 22px; }
+
+/* Puntos */
+.carrusel-grande-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+.carrusel-grande-dots { display: flex; gap: 8px; }
+.carrusel-grande-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: none;
+  transition: width 0.25s ease, background 0.25s ease;
+}
+.carrusel-grande-dot:hover { background: #fff; transform: none; box-shadow: none; }
+.carrusel-grande-dot[aria-current="true"] { width: 30px; background: #fff; }
+
+.carrusel-grande-btn:focus-visible,
+.carrusel-grande-dot:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+@media (max-width: 640px) {
+  .carrusel-grande-caption { padding: 0 24px 24px; justify-content: flex-end; }
+  .carrusel-grande-btn { width: 40px; height: 40px; }
+  .carrusel-grande-arrows { padding: 0 10px; }
+  .carrusel-grande-bar { padding: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carrusel-grande-track { scroll-behavior: auto; }
 }
 
 /* Componente: hero + carrusel */
@@ -588,5 +765,37 @@ body:has(.pet-modal[open]) { overflow: hidden; }
 }
 @media (max-width: 520px) {
   .donate-card { padding: 22px; }
-}.whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 1000; background: var(--primary-color); color: #fff; border-radius: 50%; width: 56px; height: 56px; display: grid; place-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s ease; } .whatsapp-float:hover { transform: scale(1.1); }
-.whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 1000; background: #fff; color: #fff; border-radius: 50%; width: 56px; height: 56px; display: grid; place-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s ease; } .whatsapp-float:hover { transform: scale(1.1); } .whatsapp-float img { border-radius: 50%; width: 32px; height: 32px; object-fit: cover; }
+}
+
+/* ========================================
+   BOTÓN FLOTANTE DE WHATSAPP
+   ======================================== */
+
+a.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+a.whatsapp-float:hover {
+  background: #1ebe5a;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+a.whatsapp-float svg {
+  display: block;
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}

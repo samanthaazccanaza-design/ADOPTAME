@@ -1,8 +1,4 @@
 {
-  "proyecto": "AdoptaMe",
-  "lema": "Más amor, menos abandono",
-  "version": "1.0",
-  "fechaCreacion": "2026-10-14",
   "mascotas": [
     {
       "id": 1,
@@ -10,14 +6,9 @@
       "raza": "Golden Retriever",
       "edad": "3 años",
       "tamanio": "Grande",
-      "tipo": "perro",
-      "necesidades": {
-        "comida": "3 meses de comida premium",
-        "vacunas": "Al día",
-        "desexionado": "Sí"
-      },
-      "descripcion": "Amigable y juguetón, busca un hogar activo donde pueda correr y jugar.",
-      "img": "thor.jpg"
+      "img": "images/thor.jpg",
+      "descripcion": "Cariñoso y juguetón. Le encanta correr y es muy bueno con los niños. Busca una familia con espacio para jugar.",
+      "necesidades": { "comida": "comida premium por 3 meses", "vacunas": "Al día", "desexionado": "Sí" }
     },
     {
       "id": 2,
@@ -25,14 +16,9 @@
       "raza": "Labrador",
       "edad": "2 años",
       "tamanio": "Grande",
-      "tipo": "perro",
-      "necesidades": {
-        "comida": "6 meses de comida",
-        "vacunas": "Al día",
-        "desexionado": "Sí"
-      },
-      "descripcion": "Energético y leal, excelente con niños y otros perros.",
-      "img": "buddy.jpg"
+      "img": "images/buddy.jpg",
+      "descripcion": "Un perrito lleno de energía y muy sociable. Se lleva bien con otros perros y aprende rápido.",
+      "necesidades": { "comida": "comida por 6 meses", "vacunas": "Al día", "desexionado": "Sí" }
     },
     {
       "id": 3,
@@ -40,24 +26,69 @@
       "raza": "Pastor Alemán",
       "edad": "4 años",
       "tamanio": "Grande",
-      "tipo": "perro",
-      "necesidades": {
-        "comida": "4 meses de comida",
-        "vacunas": "Al día",
-        "desexionado": "No aún"
-      },
-      "descripcion": "Inteligente y protector, necesita dueños experimentados.",
-      "img": "max.jpg"
+      "img": "images/max.jpg",
+      "descripcion": "Leal y protector. Es tranquilo en casa y muy atento. Necesita un hogar con paciencia y paseos diarios.",
+      "necesidades": { "comida": "comida por 4 meses", "vacunas": "Al día", "desexionado": "Sí" }
+    },
+    {
+      "id": 4,
+      "nombre": "Chueca",
+      "raza": "Mestizo",
+      "edad": "5 meses",
+      "tamanio": "Mediano",
+      "img": "images/perritos1.png",
+      "descripcion": "Una cachorrita dulce y curiosa que busca un hogar lleno de mucho amor. Está vacunada y esterilizada.",
+      "necesidades": { "comida": "comida para cachorros por 5 meses", "vacunas": "Al día", "desexionado": "Sí" }
+    },
+    {
+      "id": 5,
+      "nombre": "Luna",
+      "raza": "Shih Tzu",
+      "edad": "2 años",
+      "tamanio": "Pequeño",
+      "img": "images/hero3.webp",
+      "descripcion": "Tranquila y muy mimosa. Ideal para departamento y para quienes buscan compañía en casa.",
+      "necesidades": { "comida": "comida por 3 meses", "vacunas": "Al día", "desexionado": "Sí" }
+    },
+    {
+      "id": 6,
+      "nombre": "Rocky",
+      "raza": "Mestizo",
+      "edad": "1 año",
+      "tamanio": "Mediano",
+      "img": "images/rocky.jpg",
+      "descripcion": "Travieso y valiente. Le encanta jugar con la pelota y hacer nuevos amigos.",
+      "necesidades": { "comida": "comida por 4 meses", "vacunas": "Pendiente", "desexionado": "Pendiente" }
+    },
+    {
+      "id": 7,
+      "nombre": "Canela",
+      "raza": "Beagle",
+      "edad": "3 años",
+      "tamanio": "Mediano",
+      "img": "images/canela.jpg",
+      "descripcion": "Curiosa y muy olfateadora. Es dócil, cariñosa y se adapta fácil a una nueva familia.",
+      "necesidades": { "comida": "comida por 5 meses", "vacunas": "Al día", "desexionado": "Sí" }
+    },
+    {
+      "id": 8,
+      "nombre": "Toby",
+      "raza": "Pug",
+      "edad": "6 años",
+      "tamanio": "Pequeño",
+      "img": "images/toby.jpg",
+      "descripcion": "Un abuelito dormilón y adorable. Necesita una casa tranquila y una cama calientita.",
+      "necesidades": { "comida": "comida senior por 6 meses", "vacunas": "Al día", "desexionado": "Sí" }
+    },
+    {
+      "id": 9,
+      "nombre": "Mía",
+      "raza": "Cocker Spaniel",
+      "edad": "8 meses",
+      "tamanio": "Mediano",
+      "img": "images/mia.jpg",
+      "descripcion": "Cachorra alegre y muy activa. Está aprendiendo a pasear con correa y busca quien la guíe.",
+      "necesidades": { "comida": "comida para cachorros por 6 meses", "vacunas": "Pendiente", "desexionado": "Pendiente" }
     }
-  ],
-  "estadisticas": {
-    "totalMascotas": 3,
-    "adoptadas": 0,
-    "enAdopcion": 3,
-    "bolsasComidaEntregadas": 500
-  },
-  "redesSociales": {
-    "instagram": "@adoptame",
-    "facebook": "AdoptaMe Oficial"
-  }
+  ]
 }
