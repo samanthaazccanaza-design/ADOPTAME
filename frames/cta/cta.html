@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donar comida - AdoptaMe</title>
+  <link rel="stylesheet" href="../../styles/globals.css">
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="../../index.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="../../index.html" aria-label="AdoptaMe, inicio">
+        <img src="../../images/logo.jpeg" alt="AdoptaMe">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Principal">
+        <ul class="nav-links">
+          <li><a href="../adopcion/adopcion.html">Perritos</a></li>
+          <li><a href="../../index.html#historia">Nuestra Historia</a></li>
+          <li><a href="../../index.html#cta">Ayúdales</a></li>
+        </ul>
+        <a class="btn btn-primary btn-sm" href="../cta/cta.html">Donar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <a class="back-link" href="../../index.html">Volver al inicio</a>
+        <h2>Dona comida</h2>
+        <p>Elige cuántas bolsas quieres donar y a qué perrito. Cada aporte ayuda a que ninguno pase hambre.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <p class="notice" role="note">Página de prueba: la donación es simulada y no se realiza ningún cobro.</p>
+
+        <div class="donate-grid">
+
+          <div class="donate-card">
+            <form id="donateForm">
+              <div class="field">
+                <label for="donateName">Nombre</label>
+                <input id="donateName" name="nombre" type="text" autocomplete="name" required>
+              </div>
+
+              <div class="field">
+                <label for="donateEmail">Correo</label>
+                <input id="donateEmail" name="correo" type="email" autocomplete="email" required>
+              </div>
+
+              <div class="field">
+                <label for="donatePet">Perrito</label>
+                <select id="donatePet" name="perrito">
+                  <option value="">Cualquiera que lo necesite</option>
+                </select>
+              </div>
+
+              <fieldset class="field choices">
+                <legend>Bolsas de comida</legend>
+                <label class="choice"><input type="radio" name="bolsas" value="1" checked><span>1 bolsa</span></label>
+                <label class="choice"><input type="radio" name="bolsas" value="3"><span>3 bolsas</span></label>
+                <label class="choice"><input type="radio" name="bolsas" value="5"><span>5 bolsas</span></label>
+              </fieldset>
+
+              <button class="donate-submit" type="submit">Confirmar donación</button>
+            </form>
+
+            <div class="donate-done" id="donateDone" tabindex="-1" hidden>
+              <h3>Gracias, <span id="donateDoneName"></span></h3>
+              <p>Registramos tu donación simulada de <strong id="donateDoneBags"></strong> para <strong id="donateDonePet"></strong>.</p>
+              <p class="donate-ref">Referencia: <span id="donateDoneRef"></span></p>
+              <div class="donate-actions">
+                <a class="btn btn-primary" href="../../index.html">Volver al inicio</a>
+                <button class="btn-text" id="donateAgain" type="button">Hacer otra donación</button>
+              </div>
+            </div>
+          </div>
+
+          <aside class="donate-summary" aria-label="Resumen">
+            <h3>Resumen</h3>
+            <dl>
+              <div><dt>Precio por bolsa</dt><dd>S/ 40</dd></div>
+              <div><dt>Total</dt><dd id="donateTotal">S/ 40</dd></div>
+            </dl>
+            <p>Los precios son de ejemplo para esta versión de prueba.</p>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="footer-logo" href="../../index.html">AdoptaMe</a>
+        <p class="footer-tag">Más amor, menos abandono.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="../adopcion/adopcion.html">Perritos</a></li>
+        <li><a href="../../index.html#historia">Nuestra historia</a></li>
+        <li><a href="../cta/cta.html">Donar</a></li>
+      </ul>
+      <ul class="footer-links">
+        <li>Instagram: @adoptame</li>
+        <li>Facebook: AdoptaMe Oficial</li>
+      </ul>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 AdoptaMe</p>
+      <p class="footer-credit">
+        <img class="footer-icon" src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1785724960/ea44906b-6c83-445f-adb5-7d491513b167.png" alt="LeadUPN" width="16" height="16" loading="lazy" decoding="async">
+        Hecho para el curso de introducción a HTML/CSS
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

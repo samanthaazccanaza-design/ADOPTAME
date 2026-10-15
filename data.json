@@ -1,0 +1,63 @@
+{
+  "proyecto": "AdoptaMe",
+  "lema": "Más amor, menos abandono",
+  "version": "1.0",
+  "fechaCreacion": "2026-10-14",
+  "mascotas": [
+    {
+      "id": 1,
+      "nombre": "Thor",
+      "raza": "Golden Retriever",
+      "edad": "3 años",
+      "tamanio": "Grande",
+      "tipo": "perro",
+      "necesidades": {
+        "comida": "3 meses de comida premium",
+        "vacunas": "Al día",
+        "desexionado": "Sí"
+      },
+      "descripcion": "Amigable y juguetón, busca un hogar activo donde pueda correr y jugar.",
+      "img": "thor.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Buddy",
+      "raza": "Labrador",
+      "edad": "2 años",
+      "tamanio": "Grande",
+      "tipo": "perro",
+      "necesidades": {
+        "comida": "6 meses de comida",
+        "vacunas": "Al día",
+        "desexionado": "Sí"
+      },
+      "descripcion": "Energético y leal, excelente con niños y otros perros.",
+      "img": "buddy.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "Max",
+      "raza": "Pastor Alemán",
+      "edad": "4 años",
+      "tamanio": "Grande",
+      "tipo": "perro",
+      "necesidades": {
+        "comida": "4 meses de comida",
+        "vacunas": "Al día",
+        "desexionado": "No aún"
+      },
+      "descripcion": "Inteligente y protector, necesita dueños experimentados.",
+      "img": "max.jpg"
+    }
+  ],
+  "estadisticas": {
+    "totalMascotas": 3,
+    "adoptadas": 0,
+    "enAdopcion": 3,
+    "bolsasComidaEntregadas": 500
+  },
+  "redesSociales": {
+    "instagram": "@adoptame",
+    "facebook": "AdoptaMe Oficial"
+  }
+}

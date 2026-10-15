@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perritos en adopción - AdoptaMe</title>
+  <link rel="stylesheet" href="../../styles/globals.css">
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="../../index.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="../../index.html" aria-label="AdoptaMe, inicio">
+        <img src="../../images/logo.jpeg" alt="AdoptaMe">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Principal">
+        <ul class="nav-links">
+          <li><a href="../adopcion/adopcion.html" aria-current="page">Perritos</a></li>
+          <li><a href="../../index.html#historia">Nuestra Historia</a></li>
+          <li><a href="../../index.html#cta">Ayúdales</a></li>
+        </ul>
+        <a class="btn btn-primary btn-sm" href="../cta/cta.html">Donar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <a class="back-link" href="../../index.html">Volver al inicio</a>
+        <h2>Perritos en adopción</h2>
+        <p>Conoce a los perritos que buscan hogar. Abre el detalle de cada uno para ver qué necesita.</p>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container">
+        <!-- Las tarjetas se generan desde data.json -->
+        <div class="pets-grid" id="petsCatalog">
+          <p class="catalog-msg">Cargando perritos...</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="footer-logo" href="../../index.html">AdoptaMe</a>
+        <p class="footer-tag">Más amor, menos abandono.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="../adopcion/adopcion.html">Perritos</a></li>
+        <li><a href="../../index.html#historia">Nuestra historia</a></li>
+        <li><a href="../cta/cta.html">Donar</a></li>
+      </ul>
+      <ul class="footer-links">
+        <li>Instagram: @adoptame</li>
+        <li>Facebook: AdoptaMe Oficial</li>
+      </ul>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 AdoptaMe</p>
+      <p class="footer-credit">
+        <img class="footer-icon" src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1785724960/ea44906b-6c83-445f-adb5-7d491513b167.png" alt="LeadUPN" width="16" height="16" loading="lazy" decoding="async">
+        Hecho para el curso de introducción a HTML/CSS
+      </p>
+    </div>
+  </footer>
+
+  <!-- Detalle del perrito (se llena desde data.json) -->
+  <dialog class="pet-modal" id="petModal" aria-labelledby="petModalName">
+    <div class="pet-modal-body">
+      <button class="pet-modal-close" type="button" data-close aria-label="Cerrar detalle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="skeleton pet-modal-media">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="1.8"/><path d="M21 16l-5-5-9 9"/></svg>
+        <img id="petModalImg" alt="">
+      </div>
+      <div class="pet-modal-info">
+        <h3 id="petModalName"></h3>
+        <p class="pet-modal-meta" id="petModalMeta"></p>
+        <p id="petModalDesc"></p>
+        <dl class="pet-modal-needs">
+          <div><dt>Comida</dt><dd id="petModalFood"></dd></div>
+          <div><dt>Vacunas</dt><dd id="petModalVax"></dd></div>
+          <div><dt>Esterilizado</dt><dd id="petModalSterile"></dd></div>
+        </dl>
+        <div class="pet-modal-actions">
+          <a class="btn btn-primary" href="https://www.instagram.com/adoptame/" target="_blank" rel="noopener">Solicitar adopción</a>
+          <a class="btn btn-ghost" id="petModalDonate" href="frames/cta/cta.html">Donar su comida</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+</body>
+</html>
