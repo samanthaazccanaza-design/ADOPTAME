@@ -80,13 +80,13 @@ section[id] { scroll-margin-top: 72px; }
 .section-white { background: #fff; }
 
 .section-title {
-  text-align: center;
+  text-align: left;
   margin-bottom: 48px;
   padding-bottom: 0;
   border-bottom: 0;
 }
-.section-title h2 { font-size: 2.2rem; margin-bottom: 10px; }
-.section-title p { color: var(--text-light); font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
+.section-title h2 { font-size: 2.2rem; margin-bottom: 10px;  text-align: left}
+.section-title p { margin-left:  0;margin-right: 0}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
